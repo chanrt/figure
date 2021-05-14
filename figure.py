@@ -16,13 +16,33 @@ class Figure:
     def __str__(self):
         return str(self.value) + " +/- " + str(self.error)
 
-    # addition overload
+    # addition overload 1
     def __add__(self, other):
-        return Figure(self.value + other.value, self.error + other.error)
+        if isinstance(other, Figure):
+            return Figure(self.value + other.value, self.error + other.error)
+        elif isinstance(other, float) or isinstance(other, int):
+            return Figure(self.value + other, self.error)
 
-    # subtraction overload
+    # addition overload 2
+    def __radd__(self, other):
+        if isinstance(other, Figure):
+            return Figure(self.value + other.value, self.error + other.error)
+        elif isinstance(other, float) or isinstance(other, int):
+            return Figure(self.value + other, self.error)
+
+    # subtraction overload 1
     def __sub__(self, other):
-        return Figure(self.value - other.value, self.error + other.error)
+        if isinstance(other, Figure):
+            return Figure(self.value - other.value, self.error + other.error)
+        elif isinstance(other, float) or isinstance(other, int):
+            return Figure(self.value - other, self.error)
+
+    # subtraction overload 2
+    def __rsub__(self, other):
+        if isinstance(other, Figure):
+            return Figure(other.value - self.value, self.error + other.error)
+        elif isinstance(other, float) or isinstance(other, int):
+            return Figure(other - self.value, self.error)
 
     # negation overload
     def __neg__(self):
