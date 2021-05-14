@@ -1,9 +1,9 @@
 from figure import Figure
-from trig import *
+from trigs import *
+from logs import *
 
 
-a = Figure(60, 2)
-b = tangent(a, False)
-
-print(a)
-print(atangent(b, False))
+a = Figure(16, 2)
+b = log(a, base=2)
+print(b)
+print(antilog(b, base=2))
