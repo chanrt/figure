@@ -1,7 +1,9 @@
 from figure import Figure
+from trig import *
 
-a = Figure(1, 0.1)
-b = Figure(2, 0.2)
-c = a ** 2 / b ** 3
 
-print(c)
+a = Figure(60, 2)
+b = tangent(a, False)
+
+print(a)
+print(atangent(b, False))
