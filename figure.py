@@ -1,4 +1,6 @@
 import math
+import os
+from strings import *
 
 
 class Figure:
@@ -18,12 +20,18 @@ class Figure:
         else:
             self.name = name
 
+    def to_latex(self):
+        return self.name
+
+    def display_equation(self):
+        webpage = open("equation.html", "w")
+        webpage.write(preamble + mathjax_link + wrapper + self.name + close)
+        webpage.close()
+        os.system("equation.html")
+
     # print overload
     def __str__(self):
         return str(self.value) + " +/- " + str(self.error)
-
-    def to_latex(self):
-        return self.name
 
     # addition overload 1
     def __add__(self, other):
