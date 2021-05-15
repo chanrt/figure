@@ -1,3 +1,2 @@
 # Figure
- A python object that handles operations on numbers with errors
- Also converts expressions to latex code
+ A python object that handles operations on numbers with errors. Also converts expressions to latex code
