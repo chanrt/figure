@@ -24,8 +24,9 @@ class Figure:
         return self.name
 
     def display_equation(self):
+        result = str(self.value) + " \\pm " + str(self.error)
         webpage = open("equation.html", "w")
-        webpage.write(preamble + mathjax_link + wrapper + self.name + close)
+        webpage.write(preamble + mathjax_link + wrapper + self.name + mid + result + close)
         webpage.close()
         os.system("equation.html")
 

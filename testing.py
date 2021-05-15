@@ -9,4 +9,5 @@ d = Figure(60, 2, name="d")
 e = Figure(16, 1, name="e")
 
 result = (a ** 2 / b ** 3) - c + sine(d, False) - log(e, base=2)
+print(result)
 result.display_equation()
